@@ -13,6 +13,5 @@ public class FirstLoopHomework {
         } else {
             System.err.println("Your number is smaller than zero!");
         }
-        System.exit(0);
     }
 }
