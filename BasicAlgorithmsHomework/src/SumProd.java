@@ -60,14 +60,11 @@ public class SumProd {
          */
         int sum4 = 0;
         for (int i = 0; i < myArray4.length; i++) {
-            if (i % 4 == 3) { //should I write anything here, if there isn't any task?
-            } else {
+            if (i % 4 != 3) {
                 sum4 += myArray4[i];
             }
         }
-        System.out.println("The sum is the number is: " +sum4);
-
-
+        System.out.println("The sum is the number is: " + sum4);
     }
 }
 

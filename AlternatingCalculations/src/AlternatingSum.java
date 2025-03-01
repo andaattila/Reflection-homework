@@ -12,6 +12,6 @@ public class AlternatingSum {
                 sum1 += myArray1[i];
             }
         }
-        System.out.print("The sum of the numbers is: "+sum1);
+        System.out.print("The sum of the numbers is: " + sum1);
     }
 }
