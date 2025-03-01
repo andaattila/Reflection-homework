@@ -73,5 +73,6 @@ public class PlaneFigures {
         System.out.println("     *****     ");
         System.out.println("   *********   ");
         System.out.println("  ***********  ");
+        System.out.println(" ************* ");
     }
 }
