@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Projects.iml" filepath="$PROJECT_DIR$/.idea/Projects.iml" />
+      <module fileurl="file://$PROJECT_DIR$/algorithm-basics/algorithm-basics.iml" filepath="$PROJECT_DIR$/algorithm-basics/algorithm-basics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/alternating-calculations/alternating-calculations.iml" filepath="$PROJECT_DIR$/alternating-calculations/alternating-calculations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basic-algorithms/basic-algorithms.iml" filepath="$PROJECT_DIR$/basic-algorithms/basic-algorithms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basic-algorithms-homework/basic-algorithms-homework.iml" filepath="$PROJECT_DIR$/basic-algorithms-homework/basic-algorithms-homework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/days-of-the-month/days-of-the-month.iml" filepath="$PROJECT_DIR$/days-of-the-month/days-of-the-month.iml" />
+      <module fileurl="file://$PROJECT_DIR$/first-loop-homework/first-loop-homework.iml" filepath="$PROJECT_DIR$/first-loop-homework/first-loop-homework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fizz-buzz/fizz-buzz.iml" filepath="$PROJECT_DIR$/fizz-buzz/fizz-buzz.iml" />
+      <module fileurl="file://$PROJECT_DIR$/heavenly-number/heavenly-number.iml" filepath="$PROJECT_DIR$/heavenly-number/heavenly-number.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hello-world/hello-world.iml" filepath="$PROJECT_DIR$/hello-world/hello-world.iml" />
+      <module fileurl="file://$PROJECT_DIR$/loop-basic-tasks/loop-basic-tasks.iml" filepath="$PROJECT_DIR$/loop-basic-tasks/loop-basic-tasks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/loop-basic-tasks-2/loop-basic-tasks-2.iml" filepath="$PROJECT_DIR$/loop-basic-tasks-2/loop-basic-tasks-2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/plane-figures/plane-figures.iml" filepath="$PROJECT_DIR$/plane-figures/plane-figures.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test-program-for-github/test-program-for-github.iml" filepath="$PROJECT_DIR$/test-program-for-github/test-program-for-github.iml" />
+    </modules>
+  </component>
+</project>

@@ -14,21 +14,23 @@ public class AlternatingPowerAndDivision {
             for (int i = 0; i < myArray.length; i++) {
                 myArray[i] = scanner.nextInt();
             }
-            double sum = 0;
+            double sum = 1;
             for (int i = 0; i < myArray.length; i++) {
                 if (i % 2 == 0) {
                     double[] powArray = new double[myArray.length / 2];
                     for (int j = 0; j < powArray.length; j++) {
-                        powArray[j] = Math.pow(myArray[i], myArray[i + 1]);
+                        powArray[j] = myArray[i] * myArray[i + 1];
+
+                        if (j % 2 == 0) {
+                            sum *= powArray[j];
+                        } else {
+                            sum /= powArray[j];
+                        }
                     }
-                    System.out.println(powArray[1]);
+                    System.out.println(sum);
                 }
             }
         }
-
-
         scanner.close();
-
-
     }
 }
