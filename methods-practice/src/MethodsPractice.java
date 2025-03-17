@@ -23,15 +23,15 @@ public class MethodsPractice {
         System.out.println();
 
         System.out.println("6. Gets in a number, and returns weather the number is a prime number.");
-        System.out.println(isPrime(13));
+        System.out.println(isPrime(2));
         System.out.println();
 
         System.out.println("7. Gets in two numbers and returns weather the first number is divisible by the second one.");
-        System.out.println(isDivisible(18, 6));
+        System.out.println(isDivisible(18, 7));
         System.out.println();
 
         System.out.println("8. Gets in three numbers and returns weather the product of the first and second numbers is equal to the third one");
-        System.out.println(checkTheProduct(3, 5, 15));
+        System.out.println(checkTheProduct(3, 5, 16));
         System.out.println();
 
         System.out.println("9. Gets in a number (n), and writes the firs n cubic numbers to the console.");
@@ -45,7 +45,7 @@ public class MethodsPractice {
         System.out.println();
 
         System.out.println("11.Gets in an array and a number and returns whether the sum of any two numbers at different indexes can add up to that number");
-        checkTheIndexOfNumbers(6, 3, 3, 1, 5);
+        System.out.println(checkTheIndexOfNumbers(6, 3, 3, 1, 8));
         System.out.println();
 
         System.out.println("12. Gets in a String and a positive number and returns the String repeated n times. If the number is smaller than 1, return an empty String");
@@ -109,29 +109,28 @@ public class MethodsPractice {
     //6. Gets a number and returns weather that the number is a prime number.
     public static boolean isPrime(int number) {
         boolean isPrime = true;
-        for (int i = 2; i < number; i++) {
-            if (number % i == 0) {
-                isPrime = false;
-                break;
+        if (number < 2) {
+            isPrime = false;
+        } else {
+            for (int i = 2; i < number; i++) {
+                if (number % i == 0) {
+                    isPrime = false;
+                    break;
+                }
             }
         }
         return isPrime;
     }
 
     //7. Gets in two numbers and returns weather the first is divisible by the second one.
-    public static String isDivisible(int number1, int number2) {
-        if (number1 % number2 == 0) {
-            return "The firs number is divisible by the second number";
-        }
-        return "The first number in NOT divisible by the second number";
+    public static boolean isDivisible(int number1, int number2) {
+        return (number1 % number2 == 0);
     }
+
 
     //8. Gets in three numbers and return weather the product of the first and second number is equal to the third number.
     public static boolean checkTheProduct(int number1, int number2, int number3) {
-        if (number1 * number2 == number3) {
-            return true;
-        }
-        return false;
+        return (number1 * number2 == number3);
     }
 
     //9. Gets in a number (n) and writes the first n cubic numbers to the console.
@@ -155,19 +154,17 @@ public class MethodsPractice {
     }
 
     //11. Gets in an array and a number and returns weather the sum of any two numbers at different indexes can add up to that number.
-    public static void checkTheIndexOfNumbers(int n, int... numbers) {
+    public static boolean checkTheIndexOfNumbers(int n, int... numbers) {
         boolean isTrue = false;
         for (int i = 0; i < numbers.length; i++) {
             for (int j = i + 1; j < numbers.length; j++) {
                 if (numbers[i] + numbers[j] == n) {
-                    System.out.println("The sum of the array index " + i + " and " + j + " is equal the number you got.");
                     isTrue = true;
+                    break;
                 }
             }
         }
-        if (isTrue == false) {
-            System.out.println("There aren't two numbers in the array they added to each other is equals to the number you have chosen.");
-        }
+        return isTrue;
     }
 
     //12. Gets in a String and a positive number, and returns the String repeated n times. If n smaller than 1, return an empty String.
@@ -185,12 +182,12 @@ public class MethodsPractice {
 
 
     // 13. Gets in an array of Strings and concatenates them into one String.
-    public static String concatenateStrings(String... actions) {
-        String action = "";
-        for (int i = 0; i < actions.length; i++) {
-            action += actions[i];
+    public static StringBuilder concatenateStrings(String... actions) {
+        StringBuilder sb = new StringBuilder();
+        for (String action : actions) {
+            sb.append(action);
         }
-        return action;
+        return sb;
     }
 
     //14. Gets in a two-dimensional array, and returns the sum of all of teh numbers.
