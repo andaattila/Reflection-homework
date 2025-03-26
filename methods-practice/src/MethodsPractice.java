@@ -31,7 +31,7 @@ public class MethodsPractice {
         System.out.println();
 
         System.out.println("8. Gets in three numbers and returns weather the product of the first and second numbers is equal to the third one");
-        System.out.println(checkTheProduct(3, 5, 16));
+        System.out.println(isTheProductEquals(3, 5, 16));
         System.out.println();
 
         System.out.println("9. Gets in a number (n), and writes the firs n cubic numbers to the console.");
@@ -45,7 +45,7 @@ public class MethodsPractice {
         System.out.println();
 
         System.out.println("11.Gets in an array and a number and returns whether the sum of any two numbers at different indexes can add up to that number");
-        System.out.println(checkTheIndexOfNumbers(6, 3, 3, 1, 8));
+        System.out.println(isThereTwoNumbersSumEqualsN(6, 3, 3, 1, 8));
         System.out.println();
 
         System.out.println("12. Gets in a String and a positive number and returns the String repeated n times. If the number is smaller than 1, return an empty String");
@@ -129,7 +129,7 @@ public class MethodsPractice {
 
 
     //8. Gets in three numbers and return weather the product of the first and second number is equal to the third number.
-    public static boolean checkTheProduct(int number1, int number2, int number3) {
+    public static boolean isTheProductEquals(int number1, int number2, int number3) {
         return (number1 * number2 == number3);
     }
 
@@ -154,7 +154,7 @@ public class MethodsPractice {
     }
 
     //11. Gets in an array and a number and returns weather the sum of any two numbers at different indexes can add up to that number.
-    public static boolean checkTheIndexOfNumbers(int n, int... numbers) {
+    public static boolean isThereTwoNumbersSumEqualsN(int n, int... numbers) {
         boolean isTrue = false;
         for (int i = 0; i < numbers.length; i++) {
             for (int j = i + 1; j < numbers.length; j++) {
@@ -182,12 +182,15 @@ public class MethodsPractice {
 
 
     // 13. Gets in an array of Strings and concatenates them into one String.
-    public static StringBuilder concatenateStrings(String... actions) {
+    public static String concatenateStrings(String... actions) {
+        String result2="";
         StringBuilder sb = new StringBuilder();
         for (String action : actions) {
             sb.append(action);
         }
-        return sb;
+        result2=sb.toString();
+
+        return result2;
     }
 
     //14. Gets in a two-dimensional array, and returns the sum of all of teh numbers.
