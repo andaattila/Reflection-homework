@@ -39,13 +39,13 @@ public class TipCalculator {
         double result = -1;
         if (percentage <= 10 || percentage >= 80) {
             return (int) result;
-        } else return (int) percentage;
+        }
+        return (int) percentage;
     }
 
     public static int tipCalculator() {
 
-        double tip = sumTheCosts(costs) * checkThePercentage(percentage) / 100;
-        return (int) tip;
+        return sumTheCosts(costs) * checkThePercentage(percentage) / 100;
     }
 }
 
