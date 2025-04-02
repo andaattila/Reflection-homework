@@ -23,7 +23,7 @@ public class TipCalculator {
         System.out.println(checkThePercentage(percentage));
 
         System.out.println("The Tip needs to be:");
-        System.out.println(tipCalculator());
+        System.out.println(calculateTip());
 
     }
 
@@ -37,13 +37,13 @@ public class TipCalculator {
 
     public static int checkThePercentage(double percentage) {
         double result = -1;
-        if (percentage <= 10 || percentage >= 80) {
+        if (percentage < 10 || percentage > 80) {
             return (int) result;
         }
         return (int) percentage;
     }
 
-    public static int tipCalculator() {
+    public static int calculateTip() {
 
         return sumTheCosts(costs) * checkThePercentage(percentage) / 100;
     }
