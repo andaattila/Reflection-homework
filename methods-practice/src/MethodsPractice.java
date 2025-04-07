@@ -183,14 +183,14 @@ public class MethodsPractice {
 
     // 13. Gets in an array of Strings and concatenates them into one String.
     public static String concatenateStrings(String... actions) {
-        String result2="";
+        String result="";
         StringBuilder sb = new StringBuilder();
         for (String action : actions) {
             sb.append(action);
         }
-        result2=sb.toString();
+        result=sb.toString();
 
-        return result2;
+        return result;
     }
 
     //14. Gets in a two-dimensional array, and returns the sum of all of teh numbers.
