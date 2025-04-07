@@ -40,7 +40,7 @@ public class PrimeLister {
                         }
                     }
                 } else {
-                    System.out.println("not a isValid number");
+                    System.out.println("It is not a valid number");
                 }
             }
             scanner.close();
