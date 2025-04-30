@@ -1,9 +1,12 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class ArrayFun {
 
     // 1. Return the average of all even numbers in an array of integers.
 
     public static int calculateAverage(int[] array) {
-        int sum = 0; //integer because even numbers
+        int sum = 0;
         int counter = 0;
         for (int element : array) {
             if (element % 2 == 0) {
@@ -57,13 +60,125 @@ public class ArrayFun {
 
     //5.Return true if the array of integers contains any consecutive duplicates.
     public static boolean checkDuplicates(int[] numbers) {
-        boolean result = false;
-        for (int i = 0; i < numbers.length; i++) {
-            if(numbers[i]==numbers[i+1]){
-                result = true;
+        boolean isTrue = false;
+        int result = numbers[0];
+        for (int i = 0; i < numbers.length - 1; i++) {
+            if (result == numbers[i + 1]) {
+                isTrue = true;
+                break;
+            } else result = numbers[i + 1];
+        }
+        return isTrue;
+    }
+
+    /*6. Return the total number of vowels in a 2D array of strings.
+    (you don’t have to consider non-English vowels, only a, e, i, o and u).
+     */
+
+    public static int calculateVowels(String[][] texts) {
+        int result = 0;
+        for (String[] text : texts) {
+            for (String text2 : text) {
+                for (int i = 0; i < text2.length(); i++) {
+                    if (text2.charAt(i) == 'a' || text2.charAt(i) == 'A' || text2.charAt(i) == 'e' || text2.charAt(i) == 'E' || text2.charAt(i) == 'i' || text2.charAt(i) == 'I' || text2.charAt(i) == 'o' || text2.charAt(i) == 'O' || text2.charAt(i) == 'u' || text2.charAt(i) == 'U') {
+                        result++;
+                    }
+                }
             }
         }
         return result;
+    }
+
+    //7. Return the sum of the lengths of the longest string from each row (subarray).
+
+    public static int calculateSumOfTheLongest(String[][] texts) {
+        int sum = 0;
+        for (String[] subtexts : texts) {
+            for (String subtext : subtexts) {
+                for (int i = 0; i <= subtext.length(); i++) {
+                    if (i > sum) {
+                        sum = i;
+                    }
+                }
+            }
+        }
+        return sum;
+    }
+
+    //8. Return a one-dimensional (in other words: flattened) array of all strings in uppercase.
+    public static String[] makeFlattenedArrayWithUppercase(String[][] texts) {
+        int size = 0;
+        for (String[] subtext1 : texts) {
+            for (String subtext2 : subtext1) {
+                for (int i = 0; i < subtext2.length(); i++) {
+                    if (Character.isUpperCase(subtext2.charAt(i))) {
+                        size++;
+                    }
+                }
+            }
+        }
+        String[] flattened = new String[size];
+        for (int i = 0; i < flattened.length; i++) {
+            for (String[] subtext1 : texts) {
+                for (String subtext2 : subtext1) {
+                    for (int j = 0; j < subtext2.length(); j++) {
+                        if (Character.isUpperCase(subtext2.charAt(j))) {
+                            flattened[i] = subtext2;
+                            i++;
+                        }
+                    }
+                }
+            }
+        }
+        return flattened;
+    }
+
+    //9. Return a new 2D array of booleans where each element is true if the corresponding string contains a digit.
+    public static boolean[][] fillWhenDigitOnTheStrings(String[][] texts) {
+        int size1 = 0;
+        int size2 = 0;
+
+        for (String[] text1 : texts) {
+            size1++;
+            for (int i = 0; i < text1.length; i++) {
+                if (size2 <= i) {
+                    size2++;
+                }
+            }
+        }
+        boolean[][] isTrue = new boolean[size1][size2];
+
+        for (String[] text1 : texts) {
+            for (String text2 : text1) {
+                for (int i = 0; i < text2.length(); i++) {
+                    if (Character.isDigit(text2.charAt(i))) {
+                       // isTrue [i][j]==true; --> ezt nem tudom hogyan mondjam meg neki ...
+                    }
+                }
+            }
+        }
+        return isTrue;
+    }
+
+    //10. Return the average number of characters per string across all elements.
+    public static double calculateAverageNumber(String[][] texts) {
+
+        int numberOfStrings = 0;
+        int numberOfCharacters = 0;
+
+        for (String[] text1 : texts) {
+            for (String text2 : text1) {
+                for (int i = 0; i < text2.length(); i++) {
+                    numberOfCharacters += 1;
+                }
+            }
+        }
+        for (String[] text1 : texts) {
+            for (String text2 : text1) {
+                numberOfStrings++;
+            }
+        }
+        return numberOfCharacters / (double) numberOfStrings;
     }
 
     public static void main(String[] args) {

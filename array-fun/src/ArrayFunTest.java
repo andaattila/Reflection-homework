@@ -29,10 +29,45 @@ public class ArrayFunTest {
         String expected = "Thecatyesanimal";
         Assertions.assertEquals(expected, ArrayFun.concatenateTextsLongerThan3(texts));
     }
+
     @Test
-    void shouldCheckDuplicates(){
-        int[]numbers = {-12,35,35,0,15,12,68,96,35};
+    void shouldCheckDuplicates() {
+        int[] numbers = {-12, 35, 6, 0, 0, 15, 12, 0, 68, 96, 35};
         Assertions.assertTrue(ArrayFun.checkDuplicates(numbers));
     }
 
+    @Test
+    void shouldCalculateVowels() {
+        String[][] texts = {{"dog", "cat", "eat"}, {"red", "blue", "nice"}, {"bird", "keyboard"}};
+        int expected = 13;
+        Assertions.assertEquals(expected, ArrayFun.calculateVowels(texts));
+    }
+
+    @Test
+    void shouldCalculateSumOfTheLongest() {
+        String[][] texts = {{"apple", "rainbow", "mouse"}, {"red", "carrot", "deep"}, {"cat", "dog", "eat"}};
+        int expected = 7;
+        Assertions.assertEquals(expected, ArrayFun.calculateSumOfTheLongest(texts));
+    }
+
+    @Test
+    void shouldMakeFlattenedArrayWithUppercase() {
+        String[][] texts = {{"red", "Rose", "Gun"}, {"black", "Bull", "big"}, {"white", "Star", "yellow"}};
+        String[] flattened = {"Rose", "Gun", "Bull", "Star"};
+        Assertions.assertArrayEquals(flattened, ArrayFun.makeFlattenedArrayWithUppercase(texts));
+    }
+
+    @Test
+    void shouldFillWhenDigitOnTheString() {
+        String[][] texts = {{"dog2", "cat", "Jerry1"}, {"red", "blue3"}, {"1car", "null", "Zer0"}};
+        boolean[][] expected = {{true, false, true}, {false, true}, {true, false, true}};
+        Assertions.assertArrayEquals(expected, ArrayFun.fillWhenDigitOnTheStrings(texts));
+    }
+
+    @Test
+    void shouldCalculateAverageNumber() {
+        String[][] texts = {{"dog", "cat", "elephant"}, {"tiger", "lion", "pig"}, {"bird", "hawk"}};
+        double expected = 4.25;
+        Assertions.assertEquals(expected, ArrayFun.calculateAverageNumber(texts));
+    }
 }
