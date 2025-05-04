@@ -14,7 +14,7 @@ public class MethodPractice2Test {
     @Test
     void shouldReturnAnEmptyString() {
         String[] texts = {"dog", "cat", "something"};
-        String expected = " ";
+        String expected = "";
         Assertions.assertEquals(expected, MethodPractice2.returnAnEmptyString(texts));
     }
 
@@ -62,10 +62,10 @@ public class MethodPractice2Test {
 
     //10.
     @Test
-    void shouldCalculateAWierdNumber() {
+    void shouldCalculateAWeirdNumber() {
         int number = 10;
         double expected = 10;
-        Assertions.assertEquals(expected, MethodPractice2.calculateAWierdNumber(number));
+        Assertions.assertEquals(expected, MethodPractice2.calculateAWeirdNumber(number));
     }
 
     //11.a.

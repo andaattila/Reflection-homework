@@ -19,7 +19,7 @@ public class MethodPractice2 {
     //4. Gets in an array of Strings and returns an empty String
 
     public static String returnAnEmptyString(String[] texts) {
-        return " ";
+        return "";
     }
     //5.Gets in a number and returns its 42.8%
 
@@ -29,11 +29,7 @@ public class MethodPractice2 {
     //6. Gets in a String and returns the double of its length
 
     public static int calculateTheDoubleLengthOfString(String text) {
-        int result = 0;
-        for (int i = 0; i < text.length(); i++) {
-            result++;
-        }
-        return result * 2;
+        return text.length() * 2;
     }
     //7. Gets in two numbers and returns how much you would need to add to the first number to get the second one
 
@@ -43,11 +39,7 @@ public class MethodPractice2 {
     //8. Gets in a String and returns the square root of its length
 
     public static double calculateSquareRootOfAStringLength(String text) {
-        double result = 0;
-        for (int i = 0; i < text.length(); i++) {
-            result++;
-        }
-        return Math.sqrt(result);
+        return Math.sqrt(text.length());
     }
     //9. Gets in a String and returns the factorial of its length
 
@@ -60,7 +52,7 @@ public class MethodPractice2 {
     }
     //10. Gets in a number and returns 100 divided by that number
 
-    public static double calculateAWierdNumber(int number) {
+    public static double calculateAWeirdNumber(int number) {
         return 100 / (double) number;
     }
     //11. Gets in a number and returns the square of it if it is prime
@@ -72,18 +64,16 @@ public class MethodPractice2 {
                 if (number % 4 == 0) {
                     return number * 2;
                 } else return number * 3;
-            } else result = Math.pow(number, 2);
+            } else {
+                result = Math.pow(number, 2);
+            }
         }
         return result;
     }
     //12. Gets in an array of Strings and returns a new array of numbers of each String’s length
 
     public static int[] calculateStringsLength(String[] texts) {
-        int size = 0;
-        for (String text : texts) {
-            size++;
-        }
-        int[] array = new int[size];
+        int[] array = new int[texts.length];
         for (int i = 0; i < texts.length; i++) {
             array[i] = texts[i].length();
         }
