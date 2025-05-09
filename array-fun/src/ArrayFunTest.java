@@ -53,7 +53,7 @@ public class ArrayFunTest {
     @Test
     void shouldMakeFlattenedArrayWithUppercase() {
         String[][] texts = {{"red", "Rose", "Gun"}, {"black", "Bull", "big"}, {"white", "Star", "yellow"}};
-        String[] flattened = {"Rose", "Gun", "Bull", "Star"};
+        String[] flattened = {"RED", "ROSE", "GUN", "BLACK", "BULL", "BIG", "WHITE", "STAR", "YELLOW"};
         Assertions.assertArrayEquals(flattened, ArrayFun.makeFlattenedArrayWithUppercase(texts));
     }
 

@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -66,7 +67,9 @@ public class ArrayFun {
             if (result == numbers[i + 1]) {
                 isTrue = true;
                 break;
-            } else result = numbers[i + 1];
+            } else {
+                result = numbers[i + 1];
+            }
         }
         return isTrue;
     }
@@ -79,8 +82,10 @@ public class ArrayFun {
         int result = 0;
         for (String[] text : texts) {
             for (String text2 : text) {
+
                 for (int i = 0; i < text2.length(); i++) {
-                    if (text2.charAt(i) == 'a' || text2.charAt(i) == 'A' || text2.charAt(i) == 'e' || text2.charAt(i) == 'E' || text2.charAt(i) == 'i' || text2.charAt(i) == 'I' || text2.charAt(i) == 'o' || text2.charAt(i) == 'O' || text2.charAt(i) == 'u' || text2.charAt(i) == 'U') {
+                    Character.toLowerCase(text2.charAt(i));
+                    if (text2.charAt(i) == 'a' || text2.charAt(i) == 'e' || text2.charAt(i) == 'i' || text2.charAt(i) == 'o' || text2.charAt(i) == 'u') {
                         result++;
                     }
                 }
@@ -108,30 +113,24 @@ public class ArrayFun {
     //8. Return a one-dimensional (in other words: flattened) array of all strings in uppercase.
     public static String[] makeFlattenedArrayWithUppercase(String[][] texts) {
         int size = 0;
-        for (String[] subtext1 : texts) {
-            for (String subtext2 : subtext1) {
-                for (int i = 0; i < subtext2.length(); i++) {
-                    if (Character.isUpperCase(subtext2.charAt(i))) {
-                        size++;
-                    }
+        for (int i = 0; i < texts.length; i++) {
+            for (int j = 0; j < texts.length; j++) {
+                texts[i][j] = texts[i][j].toUpperCase();
+                size++;
+            }
+        }
+        String[] flatArray = new String[size];
+        for (int i = 0; i < flatArray.length; i++) {
+            for (int j = 0; j < texts.length; j++) {
+                for (int k = 0; k < texts.length; k++) {
+                    flatArray[i] = texts[j][k];
+                    i++;
                 }
             }
         }
-        String[] flattened = new String[size];
-        for (int i = 0; i < flattened.length; i++) {
-            for (String[] subtext1 : texts) {
-                for (String subtext2 : subtext1) {
-                    for (int j = 0; j < subtext2.length(); j++) {
-                        if (Character.isUpperCase(subtext2.charAt(j))) {
-                            flattened[i] = subtext2;
-                            i++;
-                        }
-                    }
-                }
-            }
-        }
-        return flattened;
+        return flatArray;
     }
+
 
     //9. Return a new 2D array of booleans where each element is true if the corresponding string contains a digit.
     public static boolean[][] fillWhenDigitOnTheStrings(String[][] texts) {
@@ -147,12 +146,11 @@ public class ArrayFun {
             }
         }
         boolean[][] isTrue = new boolean[size1][size2];
-
-        for (String[] text1 : texts) {
-            for (String text2 : text1) {
-                for (int i = 0; i < text2.length(); i++) {
-                    if (Character.isDigit(text2.charAt(i))) {
-                       // isTrue [i][j]==true; --> ezt nem tudom hogyan mondjam meg neki ...
+        for (int i = 0; i < texts.length; i++) {
+            for (int j = 0; j < texts[i].length; j++) {
+                for (int k = 0; k < texts[i][j].length(); k++) {
+                    if (Character.isDigit(texts[i][j].charAt(k))) {
+                        isTrue[i][j] = true;
                     }
                 }
             }
@@ -168,9 +166,7 @@ public class ArrayFun {
 
         for (String[] text1 : texts) {
             for (String text2 : text1) {
-                for (int i = 0; i < text2.length(); i++) {
-                    numberOfCharacters += 1;
-                }
+                numberOfCharacters += text2.length();
             }
         }
         for (String[] text1 : texts) {
@@ -182,6 +178,5 @@ public class ArrayFun {
     }
 
     public static void main(String[] args) {
-
     }
 }
