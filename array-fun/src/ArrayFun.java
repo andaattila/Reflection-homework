@@ -134,14 +134,11 @@ public class ArrayFun {
 
     //9. Return a new 2D array of booleans where each element is true if the corresponding string contains a digit.
     public static boolean[][] fillWhenDigitOnTheStrings(String[][] texts) {
-        int size1 = texts.length;
 
-        boolean[][] isTrue = new boolean[size1][];
-        for (int i = 0; i < size1; i++) {
-            int size2 = texts[i].length;
-            isTrue[i] = new boolean[size2];
+        boolean[][] isTrue = new boolean[texts.length][];
+        for (int i = 0; i < texts.length; i++) {
+            isTrue[i] = new boolean[texts[i].length];
         }
-
         for (int i = 0; i < texts.length; i++) {
             for (int j = 0; j < texts[i].length; j++) {
                 isTrue[i][j] = texts[i][j].matches(".*\\d.*");
