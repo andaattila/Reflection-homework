@@ -38,7 +38,8 @@ public class Main {
         Chef chef9 = new Chef("Johanna", 8, Gender.WOMAN);
         Chef chef10 = new Chef("Julia", 4, Gender.WOMAN);
 
-        Person.introduce();
+        person3.introduce();
         Person.printGoal();
+        chef4.introduce();
     }
 }

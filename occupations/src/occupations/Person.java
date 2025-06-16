@@ -1,14 +1,11 @@
 package occupations;
 
 public class Person {
-    static int age;
-    static String name;
-    static Gender gender;
+    int age;
+    String name;
+    Gender gender;
 
     public Person() {
-        this.age = 0;
-        this.name = "unknown";
-        this.gender = Gender.UNDEFINED;
     }
 
     public Person(int age, String name, Gender gender) {
@@ -18,15 +15,15 @@ public class Person {
     }
 
 
-    public static Gender getGender() {
+    public Gender getGender() {
         return gender;
     }
 
-    public static String getName() {
+    public String getName() {
         return name;
     }
 
-    public static int getAge() {
+    public int getAge() {
         return age;
     }
 
@@ -34,7 +31,7 @@ public class Person {
         System.out.println("Hi, my name is " + name + " I am " + age + ". I am a " + gender);
     }
 
-    public static void introduce() {
+    public void introduce() {
         System.out.println("Hi, my name is " + name + " I am " + age + ". I am a " + gender);
     }
 
