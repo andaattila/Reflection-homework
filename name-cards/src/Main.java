@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class NameCard {
+public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String[] datas = new String[5];
@@ -15,17 +15,29 @@ public class NameCard {
         System.out.println("Please enter your website:");
         datas[4] = scanner.nextLine();
 
-        int textLength = 0;
+        int maxLength = 0;
         for (String data : datas) {
-            if (data.length() > textLength) {
-                textLength = data.length();
+            if (data.length() > maxLength) {
+                maxLength = data.length();
             }
         }
-for(String data:datas) {
-    System.out.println("+-+");
-    System.out.printf("%-5" + textLength + "%|s+5", datas[0]);
-}
-
+        for (int i = 0; i < maxLength; i++) {
+            System.out.print("+-");
+        }
+        System.out.println();
+        for (String data : datas) {
+            int remain = maxLength - data.length();
+            System.out.print("| " + data);
+            for (int j = 0; j < remain; j++) {
+                System.out.print(" ");
+            }
+            System.out.println(" | ");
+            for (int i = 0; i < maxLength; i++) {
+                System.out.print("+-");
+            }
+            System.out.println();
+        }
         scanner.close();
     }
 }
+

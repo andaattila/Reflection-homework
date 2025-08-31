@@ -28,7 +28,7 @@ public class Person {
     }
 
     public static void introduce(String name, int age, Gender gender) {
-        System.out.println("Hi, my name is " + name + " I am " + age + ". I am a " + gender);
+        System.out.printf("Hi, my name is %s, I am %d. I am a %s%n", name, age, gender);
     }
 
     public void introduce() {
